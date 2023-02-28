@@ -12,6 +12,21 @@ body {
     font-family: 'Roboto Condensed', Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
+#mainPage:hover {
+  transition: 0.8s;
+  color:rgb(241, 185, 255)
+}
+
+#navbar-options {
+  color: rgb(238, 238, 238);
+  margin-left: 50px;
+}
+
+#navbar-options:hover {
+  transition: 0.8s;
+  color:rgb(241, 185, 255)
+}
+
 #mainPage {
   text-decoration: none;
   color: rgb(238, 238, 238);
