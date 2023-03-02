@@ -30,8 +30,8 @@ Product.init(
       allowNull: false,
     },
     daily_rate: {
-        type: DataTypes.DECIMAL(6, 2),
-        allowNull: false,
+      type: DataTypes.DECIMAL(6, 2),
+      allowNull: false,
     },
     user_manual: {
       type: DataTypes.STRING,
