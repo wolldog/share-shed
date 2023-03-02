@@ -1,6 +1,6 @@
-const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const bcrypt = require("bcrypt");
+const sequelize = require("../config/connection");
 
 // create our User model
 // include password encryption bcrypt
@@ -23,8 +23,8 @@ User.init(
       allowNull: false,
     },
     last_name: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     email: {
       type: DataTypes.STRING,
@@ -39,8 +39,8 @@ User.init(
       allowNull: false,
     },
     lat_lon: {
-    type: DataTypes.STRING,
-    allowNull: true,
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     password: {
       type: DataTypes.STRING,
@@ -61,7 +61,7 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
+    modelName: "user",
   }
 );
 
