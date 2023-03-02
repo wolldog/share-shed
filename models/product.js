@@ -55,6 +55,7 @@ Product.init(
     },
   },
   {
+    timestamps: false,
     sequelize,
     freezeTableName: true,
     underscored: true,
