@@ -70,7 +70,7 @@ a:visited {
 header {
   padding: 40px;
   text-align: center;
-  background: var(--primary);
+  /* background: var(--primary); */
   color: var(--light);
 }
 
@@ -79,7 +79,9 @@ main {
   flex-wrap: wrap;
   flex-grow: 1;
 }
-
+.bg-dark{
+  background-color: #FFD966 !important;
+}
 aside {
   flex: 0;
   background-color: var(--tertiary);
@@ -94,14 +96,14 @@ nav {
 }
 
 nav a {
-  color: var(--light);
+  color: #000 !important;
   padding: 14px 20px;
   text-decoration: none;
   text-align: center;
 }
 
 nav a:hover {
-  color: var(--secondary);
+  color: #fff !important;
   background-color: var(--dark);
 }
 
@@ -157,14 +159,10 @@ img {
 .login-card {
   margin: 0 0 20px 0;
   flex: 0 0 50%;
-  max-width: 50%;
-  padding: 5px;
-  border: 3px solid var(--dark);
+  max-width: 80%;
+  padding: 15px;
   border-radius: var(--border-radius);
-  border-style: double;
-  border-width: thick;
-  background-color: #577a7c;
-  color: var(--light);
+  background-color: rgba(0, 0, 0, 0.07);
 }
 
 .card header {
@@ -182,7 +180,10 @@ img {
   text-align: center;
   font-weight: bold;
 }
-
+.btn-yellow{
+  background-color: #FFD966;
+  font-weight: bold;
+}
 .gallery-name {
   text-transform: uppercase;
   letter-spacing: 3px;
