@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to Bootstrap's CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Link to font-awesome -->
+    <link rel="stylesheet"   href="./css/style.css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <title>Share-Shed</title>
+    <style>
+      /* Custom styles */
+      body {
+        padding: 50px;
+      }
+  
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+  
+      form {
+        margin-top: 30px;
+      }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark fixed-top" data-bs-theme="dark">
+          <div class="container-fluid">
+            <h1><a class="navbar-brand" id="mainPage" href="/">
+              
+              <img class="nav-img" src="./images/ShareShedLogo__1_-removebg-preview.png" alt="">
+            </a></h1>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                  <a class="nav-link" href="#" id="navbar-options" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Login/Logout
+                  </a>
+                </li>
+                <li class="nav-item dropdown">
+
+                  <a class="nav-link" href="#" id="navbar-options" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                  onclick="navigateToSignup()"
+                  >
+                    Sign Up
+                  </a>
+                </li>
+                  <a class="nav-link" href="#" id="navbar-options" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    How to use Share Shed
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" id = "favourites-btn" href="#" role="button" aria-expanded="false">
+                    Favourites
+                  </a>
+                </li>
+                
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="categoryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Category
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
+                    <li><a class="dropdown-item" href="#">Tools</a></li>
+                    <li><a class="dropdown-item" href="#">Floor equipment</a></li>
+                    <li><a class="dropdown-item" href="#">Carpet cleaning</a></li>
+                    <li><a class="dropdown-item" href="#">General equipment</a></li>
+                    <li><a class="dropdown-item" href="#">Garden tools</a></li>
+                    <li><a class="dropdown-item" href="#">Trailer</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <div class="container mt-5">
+    
+        <div class="row w-100 align-items-center">
+          <div class="col-md-6">
+            <img  src="./images/ShareShedLogo__1_-removebg-preview.png" class="img-fluid" alt="login">
+            
+          </div>
+          <div class="col-md-6">
+              <div class="login-card w-100 m-auto">
+                  <h3 class="text-center">Join Share Shed</h3>
+                  <form>
+                    <div class="mb-3">
+                        
+                      <label for="emil" class="form-label">Enter Your email</label>
+                      <input type="text" class="form-control" id="Enter Your email" name="emil" required>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+
+                      <div class="mb-3">
+  
+                          <label for="Firstname" class="form-label">First name</label>
+                          <input type="text" class="form-control" id="Firstname" name="Firstname" required>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label for="LastName" class="form-label">Last Name</label>
+                        <input  class="form-control" id="LastName" name="LastName" required>
+                    </div>
+                    </div>
+                  </div>
+                
+                  <div class="mb-3">
+                    <label for="Password" class="form-label">Password</label>
+                    <input  type="password" class="form-control" id="Password" name="Password" required>
+                </div>
+                      
+                      <button type="submit" class="btn btn-yellow w-100 mb-3">Login</button>
+                      <div class="text-center">
+                          Don’t have an account yet? <a href="#">Join here!</a>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+      </div>
+      
+  
+</div>
+    
+    
+
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="../controllers/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+<!-- JavaScript code to extract URL parameters -->
+<script>
+  function navigateToSignup() {
+  window.location.href = "joinShareShared.html";
+}
+  // Retrieve URL parameters
+const urlParams = new URLSearchParams(window.location.search);
+const image = urlParams.get('image');
+const title = urlParams.get('title');
+const description = urlParams.get('description');
+
+// Update product details
+document.getElementById('product-image').setAttribute('src', image);
+document.getElementById('product-title').innerHTML = title;
+document.getElementById('product-description').innerHTML = description;
+
+
+</script>
+</body>
+</html>
+
