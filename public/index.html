@@ -15,20 +15,23 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark fixed-top" data-bs-theme="dark">
           <div class="container-fluid">
-            <h1><a class="navbar-brand" id="mainPage" href="#">Share Shed</a></h1>
+            <h1><a class="navbar-brand" id="mainPage" href="#">
+              
+              <img class="nav-img" src="./images/ShareShedLogo__1_-removebg-preview.png" alt="">
+            </a></h1>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item dropdown">
-                  <a class="nav-link" href="#" id="navbar-options" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Login/Logout
+                  <a class="nav-link" onclick="navigateToLogin()" href="./loginpage.html" id="navbar-options" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Login/Logout 
                   </a>
                 </li>
                 <li class="nav-item dropdown">
 
-                  <a class="nav-link" href="#" id="navbar-options" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link" onclick="navigateToSignup()" href="./joinShareShed.html" id="navbar-options" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Sign Up
                   </a>
                 </li>
@@ -42,52 +45,196 @@
                     Favourites
                   </a>
                 </li>
+                
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="categoryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Category
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
+                    <li><a class="dropdown-item" href="#">Tools</a></li>
+                    <li><a class="dropdown-item" href="#">Floor equipment</a></li>
+                    <li><a class="dropdown-item" href="#">Carpet cleaning</a></li>
+                    <li><a class="dropdown-item" href="#">General equipment</a></li>
+                    <li><a class="dropdown-item" href="#">Garden tools</a></li>
+                    <li><a class="dropdown-item" href="#">Trailer</a></li>
+                  </ul>
+                </li>
               </ul>
             </div>
           </div>
         </nav>
       </header>
 
+    
+      
       <!--Gallery-->
+<div class="container mt-5">
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="Category-tab1" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Tools</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="Category-tab2" data-bs-toggle="tab" data-bs-target="#Category"2 type="button" role="tab" aria-controls="Category"2 aria-selected="false">Floor Equipment</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="Category-tab3" data-bs-toggle="tab" data-bs-target="#Category"3 type="button" role="tab" aria-controls="Category"3 aria-selected="false">Carpet Cleaning</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="Category-tab4" data-bs-toggle="tab" data-bs-target="#Category"4 type="button" role="tab" aria-controls="Category"4 aria-selected="false">General Equipment</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="Category-tab5" data-bs-toggle="tab" data-bs-target="#Category"5 type="button" role="tab" aria-controls="Category"5 aria-selected="false">Garden Tools</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="Category-tab6" data-bs-toggle="tab" data-bs-target="#Category"6 type="button" role="tab" aria-controls="Category"6 aria-selected="false">Trailer</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="Category-tab1">
+      <!-- Items map here fo tab 1 -->
+      <section id="item-list" class="items">
+</section>
+    </div>
+    <div class="tab-pane fade" id="Category"2 role="tabpanel" aria-labelledby="Category-tab2">
+      <section id="item-list1" class="items">
+        
+      <!-- Items map here fo tab 1 -->
+        
+</section>
+    </div>
+    <div class="tab-pane fade" id="Category"3 role="tabpanel" aria-labelledby="Category-tab3">
+      <section id="item-list2" class="items">
+      
 
-      <section class="items">
-        <div class="item">
-            <img src="./images/hand-tools .jpeg" alt="hand tools">
-            <h2>Tools</h2>
-        </div>
-
-        <div class="item">
-            <img src="./images/floor tools.jpg" alt="Floor tool image">
-            <h2>Floor Equipment</h2>
-        </div>
-
-        <div class="item">
-            <img src="./images/person using an at home carpet cleaner.jpg" alt="Person using Carpet cleaner at home">
-            <h2>Carpet Cleaning</h2>
-        </div>
-
-        <div class="item">
-            <img src="./images/general equipment.jpg" alt="Man using Machine">
-            <h2>General Equipment</h2>
-        </div>
-
-        <div class="item">
-            <img src="./images/Garden_tools.jpg" alt="garden tools">
-            <h2>Garden Tools</h2>
-
-            <div class="item">
-              <img src="./images/box-trailer.jpg" alt="Trailer image">
-              <h2>Trailer</h2>
-          </div>
-          </div>
+</section>
+    </div>
+  </div>
 </div>
-    </section>
-
+    
+    
 
     
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="../controllers/index.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+<script>
+  function navigateToLogin() {
+  window.location.href = "loginPage.html";
+}
+function navigateToSignup() {
+  window.location.href = "joinShareShared.html";
+}
+  // Define an array of objects representing each item
+var items = [
+  {
+    id:1,
+    imageSrc: "./images/hand-tools .jpeg",
+    title: "Tools",
+    description: "Lorem ipsum dolor sit amet. dolor sit amet.",
+    price:'10'
+  },
+  {
+    id:2,
+
+    imageSrc: "./images/floor tools.jpg",
+    title: "Floor Equipment",
+    description: "Lorem ipsum dolor sit amet. dolor sit amet."
+    ,price:'20'
+  },
+  {
+    id:3,
+
+    imageSrc: "./images/person using an at home carpet cleaner.jpg",
+    title: "Carpet Cleaning",
+    description: "Lorem ipsum dolor sit amet. dolor sit amet."
+    ,price:'240'
+
+  },
+  {
+    id:4,
+
+    imageSrc: "./images/general equipment.jpg",
+    title: "General Equipment",
+    description: "Lorem ipsum dolor sit amet. dolor sit amet."
+    ,price:'100'
+
+  },
+  {
+    id:5,
+
+    imageSrc: "./images/Garden_tools.jpg",
+    title: "Garden Tools",
+    description: "Lorem ipsum dolor sit amet. dolor sit amet."
+    ,price:'210'
+
+  },
+  {
+    id:6,
+
+    imageSrc: "./images/box-trailer.jpg",
+    title: "Trailer",
+    description: "Lorem ipsum dolor sit amet. dolor sit amet."
+    ,price:'20'
+
+  }
+];
+ 
+
+
+const itemList = document.getElementById('item-list');
+const itemList1 = document.getElementById('item-list1');
+const itemList2 = document.getElementById('item-list2');
+
+
+function onItemClick(index) {
+  localStorage.setItem('selectedItemIndex', index);
+  location.href = 'viewProduct.html';
+}
+items.forEach(item => {
+
+const itemHtml = `
+  <div class="item" data-id="${item.id}">
+    <img src="${item.imageSrc}" alt="${item.title}">
+    <div class="p-3 pb-0 w-100 d-flex justify-content-between">
+      <i class="bi bi-tools"></i>
+      <i class="bi bi-chevron-right"></i>
+    </div>
+    <div class="d-flex p-3 justify-content-between align-items-center">
+      <h4 class="">${item.title}</h4>
+      <span class="fw-bold ">$${item.price}</span>
+      </div>
+
+    <div class="overlay">
+      <div class="pb-0 w-100 d-flex justify-content-between">
+        <i class="bi bi-tools"></i>
+        <i class="bi bi-chevron-right"></i>
+      </div>
+      <h4>${item.title}</h4>
+      <p class="fw-bold">$${item.price}</p>
+      <p>${item.description}</p>
+
+    </div>
+  </div>
+`;
+
+itemList.innerHTML += itemHtml;
+itemList1.innerHTML += itemHtml;
+itemList2.innerHTML += itemHtml;
+
+
+const itemElements = document.querySelectorAll('.item');
+
+itemElements.forEach(itemElement => {
+  const itemId = itemElement.getAttribute('data-id');
+  const item = items.find(item => item.id == itemId);
+
+  itemElement.addEventListener('click', () => {
+    // Navigate to viewProduct.html with product details in URL
+    window.location.href = `viewProduct.html?id=${item.id}&title=${item.title}&image=${item.imageSrc}&description=${item.description}`;
+  });
+});
+
+});
+</script>
 </body>
 </html>
-
