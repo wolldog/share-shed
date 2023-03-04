@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 // create our Booking model
 class Booking extends Model {}
@@ -13,15 +13,15 @@ Booking.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
     },
     start_date: {
       type: DataTypes.DATEONLY,
-      allowNull: true
+      allowNull: true,
     },
-    end_date:  {
-        type: DataTypes.DATEONLY,
-        allowNull: true
+    end_date: {
+      type: DataTypes.DATEONLY,
+      allowNull: true,
     },
     payment_total: {
       type: DataTypes.DECIMAL(8, 2),
@@ -30,27 +30,26 @@ Booking.init(
     product_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'product',
-        key: 'id',
-        unique: false
-      }
+        model: "product",
+        key: "id",
+        unique: false,
+      },
     },
     customer_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'user',
-          key: 'id',
-          unique: false
-        }
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
+        unique: false,
       },
-
+    },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'booking'
+    modelName: "booking",
   }
 );
 
