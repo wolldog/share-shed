@@ -1,0 +1,45 @@
+<div class="container mt-5">
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="Category-tab1" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Tools</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="Category-tab2" data-bs-toggle="tab" data-bs-target="#Category"2 type="button" role="tab" aria-controls="Category"2 aria-selected="false">Floor Equipment</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="Category-tab3" data-bs-toggle="tab" data-bs-target="#Category"3 type="button" role="tab" aria-controls="Category"3 aria-selected="false">Carpet Cleaning</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="Category-tab4" data-bs-toggle="tab" data-bs-target="#Category"4 type="button" role="tab" aria-controls="Category"4 aria-selected="false">General Equipment</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="Category-tab5" data-bs-toggle="tab" data-bs-target="#Category"5 type="button" role="tab" aria-controls="Category"5 aria-selected="false">Garden Tools</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="Category-tab6" data-bs-toggle="tab" data-bs-target="#Category"6 type="button" role="tab" aria-controls="Category"6 aria-selected="false">Trailer</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="Category-tab1">
+      <!-- Items map here fo tab 1 -->
+        <section id="item-list", class="items">
+        {{#each products as |product|}}
+        {{> item-details}}
+        {{/each}}
+        </section>
+    </div>
+    <div class="tab-pane fade" id="Category"2 role="tabpanel" aria-labelledby="Category-tab2">
+      <section id="item-list1" class="items">
+        
+      <!-- Items map here fo tab 1 -->
+        
+</section>
+    </div>
+    <div class="tab-pane fade" id="Category"3 role="tabpanel" aria-labelledby="Category-tab3">
+      <section id="item-list2" class="items">
+      
+
+</section>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="item" data-id= "{{id}}">
+  {{!-- link is working but it is not displaying inside the mainpage --}}
+  <a href="/product/{{id}}">
+    <img class="img-fluid" src="/images/{{filename}}" alt="{{product_name}}">
+  </a>
+    <div class="p-3 pb-0 w-100 d-flex justify-content-between">
+      <i class="bi bi-tools"></i>
+      <i class="bi bi-chevron-right"></i>
+    </div>
+    <div class="d-flex p-3 justify-content-between align-items-center">
+      <h4 class="">{{product_name}}</h4>
+      <span class="fw-bold ">${{daily_rate}}</span>
+      </div>
+
+    <div class="overlay">
+      <div class="pb-0 w-100 d-flex justify-content-between">
+        <i class="bi bi-tools"></i>
+        <i class="bi bi-chevron-right"></i>
+      </div>
+      <h4>{{product_name}}</h4>
+      <p class="fw-bold">${{daily_rate}}</p>
+      <p>{{product_make}}</p>
+      <p>{{product_model}}</p>
+
+    </div>
+  </div>
