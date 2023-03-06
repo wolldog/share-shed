@@ -41,7 +41,7 @@ Product.init(
     filename: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: "hand-tools.jpeg"
+      defaultValue: "hand-tools .jpg"
     },
     //foreignKey references 'User' table
     owner_id: {
