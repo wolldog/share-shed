@@ -1,14 +1,13 @@
 // Create new booking 
-// Need to get product ID from params and add to the booking
-router.post('/product/booking', async (req, res) => {
+
+router.post('/product/:id', async (req, res) => {
     try {
         const dbBookingData = await Booking.create({
-        user_id: req.session.user_id,
-        start_date: req.body.start_date,
-        end_date: req.body.end_date,
-        location: req.body.location,
-        price: req.body.price,
-        description: req.body.description,
+        start_date: req.body.startDate,
+        end_date: req.body.endDate,
+        payment_total: req.body.price,
+        product_id: req.body.productID,
+        customer_id: req.session.user_id,
         });
     
         res.status(200).json(dbBookingData);
