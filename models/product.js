@@ -37,6 +37,12 @@ Product.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
+    //image currently hard coded
+    filename: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: "hand-tools .jpg"
+    },
     //foreignKey references 'User' table
     owner_id: {
       type: DataTypes.INTEGER,
