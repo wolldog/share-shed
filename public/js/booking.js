@@ -1,4 +1,6 @@
 const bookBtn = document.getElementById('book-btn');
+const datePickers = document.querySelectorAll('.js-calculate-total');
+console.log(datePickers)
 
 // BookBtnHandler function
 
@@ -28,6 +30,25 @@ const bookBtnHandler = async (event) => {
     console.log(response);
 };
 
+// CalculateTotal function
+
+const calculateTotal = (event) => {
+  const startDate = document.getElementById('start_date').value;
+  const endDate = document.getElementById('end_date').value;
+  // const isStartDate = event.target.id === 'start_date';
+  console.log(event.target.value)
+  const date1 = dayjs(endDate);
+  const dayCount = date1.diff(startDate, 'day');
+  console.log(dayCount)
+  console.log(typeof dayCount)
+};
+
 // Add event listener to 'Book now' button
 
 bookBtn.addEventListener('click', bookBtnHandler);
+
+// Add event listener to date pickers
+
+datePickers.forEach((datePicker) => {
+    datePicker.addEventListener('change', calculateTotal);
+});
