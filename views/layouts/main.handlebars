@@ -15,8 +15,7 @@
   <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark fixed-top" data-bs-theme="dark">
           <div class="container-fluid">
-            <h1><a class="navbar-brand" id="mainPage" href="/">
-              
+            <a class="navbar-brand" id="mainPage" href="/">
               <img class="nav-img" src="/images/ShareShedLogo__1_-removebg-preview.png" alt="" >
             </a></h1>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,48 +25,38 @@
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item dropdown">
                   {{#if loggedIn}}
-                    <button id="logout" class="btn-no-style">Logout</button>
-                  {{else}}
-                  <a class="nav-link" href="/login" id="navbar-options" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Login
+                   <li class="nav-item dropdown">
+                  <a class="nav-link m-3"  id="logout" role="button" data-bs-toggle="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    Logout
                   </a>
-                  {{/if}}
-                </li>
+                  </li>
                 <li class="nav-item dropdown">
-
-                  <a class="nav-link" href="/signup" id="navbar-options" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Sign Up
-                  </a>
-                </li>
-                  <a class="nav-link" href="#" id="navbar-options" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    How to use Share Shed
-                  </a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" id = "favourites-btn" href="#" role="button" aria-expanded="false">
+                  <a class="nav-link m-3" id = "favourites-btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Favourites
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" id = "favourites-btn" href="./list-products.html" role="button" aria-expanded="false">
+                <li class="nav-item dropdown">
+                  <a class="nav-link m-3" id = "list-item" href="./list-products.html" data-bs-toggle="dropdown" role="button" aria-expanded="false">
                     List an item 
                   </a>
                 </li>
-                
-                {{!-- <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="categoryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Category
+                  {{else}}
+                  <li class="nav-item dropdown">
+                  <a class="nav-link m-3" href="/login" id="user-login" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Login
                   </a>
-                  <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
-                    <li><a class="dropdown-item" href="#">Tools</a></li>
-                    <li><a class="dropdown-item" href="#">Floor equipment</a></li>
-                    <li><a class="dropdown-item" href="#">Carpet cleaning</a></li>
-                    <li><a class="dropdown-item" href="#">General equipment</a></li>
-                    <li><a class="dropdown-item" href="#">Garden tools</a></li>
-                    <li><a class="dropdown-item" href="#">Trailer</a></li>
-                  </ul>
-                </li> --}}
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link m-3" href="/signup" id="user-signup" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Sign Up
+                    </a>
+                  </li>
+                  <li class="nav-item dropdown">
+                  <a class="nav-link m-3" href="#" id="how-to" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    How to use Share Shed
+                  </a>
+                  </li>
+                  {{/if}}
               </ul>
             </div>
           </div>
@@ -75,11 +64,11 @@
   </header>
 
   <main>
-   
     <div class="container mt-5">
       {{{body}}}
     </div>
   </main>
+  
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
