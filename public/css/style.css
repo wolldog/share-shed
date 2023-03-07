@@ -285,6 +285,25 @@ font-weight: bold;
 .item:hover p {
   display: block;
 }
+
+
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#FFD966;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+	margin-top:22px;
+}
 @media screen and (max-width: 1000px){
   .items{
       grid-template-columns: repeat(2, 1fr);
