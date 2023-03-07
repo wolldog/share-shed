@@ -20,6 +20,7 @@ const bookBtnHandler = async (event) => {
       } else {
         alert(response.statusText);
       }
+    console.log(response);
 };
 
 // Add event listener to 'Book now' button

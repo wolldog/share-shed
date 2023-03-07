@@ -1,20 +1,23 @@
 // Create new booking 
 
 router.post('/product/:id', async (req, res) => {
-    try {
-        const dbBookingData = await Booking.create({
-        start_date: req.body.startDate,
-        end_date: req.body.endDate,
-        payment_total: req.body.dailyRate,
-        product_id: req.body.productID,
-        customer_id: req.session.user_id,
-        });
-    
-        res.status(200).json(dbBookingData);
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
+    if (req.session.loggedIn) {
+        try {
+            const dbBookingData = await Booking.create({
+            start_date: req.body.startDate,
+            end_date: req.body.endDate,
+            payment_total: req.body.dailyRate,
+            product_id: req.body.productID,
+            customer_id: req.session.user_id,
+            });
+        
+            res.status(200).json(dbBookingData);
+        } catch (err) {
+            console.log(err);
+            res.status(500).json(err);
+        }
     }
+    
 });
 
 // Show all bookings
