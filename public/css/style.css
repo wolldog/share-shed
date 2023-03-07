@@ -216,6 +216,7 @@ img {
   grid-row-gap: 30px;
   background-color: #eee;
 }
+
 .item{
 background-color: #fff;
 
@@ -301,8 +302,12 @@ font-weight: bold;
 	box-shadow: 2px 2px 3px #999;
 }
 
-.my-float{
+.float-map{
 	margin-top:22px;
+}
+.float-list{
+	margin-top:22px;
+  display: none;
 }
 @media screen and (max-width: 1000px){
   .items{

@@ -1,9 +1,18 @@
 const router = require("express").Router();
 const { User, Product, Category } = require("../models");
 
+router.get("/", async (req, res) => {
+  try {
+    res.render("maps");
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
-// GET location data for maps
+module.exports = router;
 
+/*
 function getLocData(){
   router.get("/", async (req, res) => {
     try {
@@ -22,10 +31,11 @@ function getLocData(){
 
   return locations
 }
+
 console.log(getLocData());
- /* get user location from db */
+/* get user location from db */
 
-
+/*
 function initMap() {
     const sydney = { lat: -33.8688, lng: 151.2093 };
     const map = new google.maps.Map(document.getElementById("map"), {
@@ -34,12 +44,6 @@ function initMap() {
     });
 
     seeds = getLocData();
-    
-    for(var i =0; i<seedlist.length;i++){
-      addMarker(seedlist[i], map);
-    }
-  
-  
   }
   
   // Adds a marker to the map.
@@ -58,5 +62,11 @@ function initMap() {
       map: map,
     });
   }
+
+  //.container for grid
+  //.map
   
   window.initMap = initMap;
+
+*/
+

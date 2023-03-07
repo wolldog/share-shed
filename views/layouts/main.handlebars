@@ -10,6 +10,8 @@
     <script src="https://kit.fontawesome.com/63ba018dbf.js" crossorigin="anonymous"></script>
     <link rel="stylesheet"   href="./css/style.css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 
+    <script src="../../controllers/map.js"></script>
+
     <title>Share-Shed</title>
 </head>
 <body>
@@ -80,15 +82,15 @@
     <div class="container mt-5">
       {{{body}}}
     </div>
-    <div class="">
-    <a href="map" class="float">
-      <i class="fa-sharp fa-solid fa-map-location-dot my-float"></i>
-    </a>
-    </div>
+    
+    
+    
   </main>
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
+
+<script src="/js/maps.js"></script>
 </body>
 
 </html>
