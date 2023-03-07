@@ -1,18 +1,23 @@
 const bookBtn = document.getElementById('book-btn');
-const startDate = document.getElementById('start_date').value;
-const endDate = document.getElementById('end_date').value;
-const productID = document.location.search.split('/').pop();
-console.log(productID);
-const dailyRate = document.getElementById('daily-rate').value;
 
 // BookBtnHandler function
 
 const bookBtnHandler = async (event) => {
     event.preventDefault();
-    const response = await fetch('/api/booking', {
+    console.log('bookBtnHandler has been clicked! Yay!')
+    
+    const startDate = document.getElementById('start_date').value;
+    const endDate = document.getElementById('end_date').value;
+    const productID = document.location.pathname.split('/').pop();
+    const dailyRateString = document.getElementById('daily-rate').innerHTML.split(':').pop();
+    const dailyRate = parseFloat(dailyRateString);
+    console.log(startDate, endDate, productID, dailyRate);
+    console.log(typeof dailyRate)
+    
+    const response = await fetch(`/api/booking/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
-        body: JSON.stringify({ productID, startDate, endDate, dailyRate }),
+        body: JSON.stringify({ startDate, endDate, dailyRate, productID }),
     });
     
     if (response.ok) {
