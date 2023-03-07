@@ -5,13 +5,10 @@ const productID = document.location.search.split('/').pop();
 console.log(productID);
 const dailyRate = document.getElementById('daily-rate').value;
 
-// Add event listener to 'Book now' button
-
-bookBtn.addEventListener('click', bookBtnHandler);
-
 // BookBtnHandler function
 
 const bookBtnHandler = async (event) => {
+    event.preventDefault();
     const response = await fetch('/api/booking', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
@@ -25,3 +22,6 @@ const bookBtnHandler = async (event) => {
       }
 };
 
+// Add event listener to 'Book now' button
+
+bookBtn.addEventListener('click', bookBtnHandler);
