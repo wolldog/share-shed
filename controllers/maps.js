@@ -3,7 +3,7 @@ const { User, Product, Category } = require("../models");
 
 router.get("/", async (req, res) => {
   try {
-    res.render("maps");
+    res.render("maps", {});
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
