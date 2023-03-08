@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
             const dbBookingData = await Booking.create({
             start_date: req.body.startDate,
             end_date: req.body.endDate,
-            payment_total: req.body.dailyRate,
+            payment_total: req.body.paymentTotalDec,
             product_id: req.body.productID,
             // customer_id: req.session.user_id,
             customer_id: 1,

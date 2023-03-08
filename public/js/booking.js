@@ -8,20 +8,28 @@ const dailyRate = parseFloat(dailyRateString);
 
 const bookBtnHandler = async (event) => {
     event.preventDefault();
-    console.log('bookBtnHandler has been clicked! Yay!')
+    console.log('bookBtnHandler has been clicked!')
     
     const startDate = document.getElementById('start_date').value;
     const endDate = document.getElementById('end_date').value;
     const productID = document.location.pathname.split('/').pop();
+    
+    const date1 = dayjs(endDate);
+    const dayCount = date1.diff(startDate, 'day');
+    const paymentTotal = dayCount * dailyRate;
+    console.log(paymentTotal)
+    const paymentTotalDec = parseFloat(paymentTotal.toFixed(2)) + 0.01;
+    console.log(paymentTotalDec)
+    console.log(typeof paymentTotalDec)
     // const dailyRateString = document.getElementById('daily-rate').innerHTML.split(':').pop();
     // const dailyRate = parseFloat(dailyRateString);
-    console.log(startDate, endDate, productID, dailyRate);
-    console.log(typeof dailyRate)
+    // console.log(startDate, endDate, productID, dailyRate);
+    // console.log(typeof dailyRate)
     
     const response = await fetch(`/api/booking/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
-        body: JSON.stringify({ startDate, endDate, dailyRate, productID }),
+        body: JSON.stringify({ startDate, endDate, paymentTotalDec, productID }),
     });
     
     if (response.ok) {
@@ -34,7 +42,7 @@ const bookBtnHandler = async (event) => {
 
 // CalculateTotal function
 
-const calculateTotal = (event) => {
+const calculateTotal = async (event) => {
   const startDate = document.getElementById('start_date').value;
   const endDate = document.getElementById('end_date').value;
   // const isStartDate = event.target.id === 'start_date';
@@ -43,8 +51,9 @@ const calculateTotal = (event) => {
   const dayCount = date1.diff(startDate, 'day');
   console.log(dayCount)
   console.log(typeof dayCount)
-  const paymentTotal = dayCount * dailyRate;
+  const paymentTotal = await dayCount * dailyRate;
   bookBtn.innerHTML = `Book now for $${paymentTotal}`;
+  return paymentTotal;
 };
 
 // Add event listener to 'Book now' button
