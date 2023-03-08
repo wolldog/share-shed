@@ -13,7 +13,7 @@ router.post('/', async (req, res) => {
             end_date: req.body.endDate,
             payment_total: req.body.paymentTotalDec,
             product_id: req.body.productID,
-            customer_id: req.session.id || 1,
+            customer_id: req.session.userID || 1,
             });
         
             res.status(200).json(dbBookingData);
