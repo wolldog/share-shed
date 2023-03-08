@@ -25,6 +25,27 @@ router.post('/', async (req, res) => {
     
 });
 
+// Get latest booking (for confirmation page) by getting all bookings, limiting to 1 result and ordering by ID in descending order
+
+router.get('/', async (req, res) => {
+    try {
+      let singleBooking = await Booking.findAll({
+        limit: 1,
+        // where: {
+        //     id: ,
+        // }
+        order: [['id', 'DESC']],
+    });
+    res.status(200).json(singleBooking);
+    // res.render("booking-conf", { singleBooking });
+
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+
+  });
+
 // // Show all bookings
 // router.get('/', async (req, res) => {
 //     try {
