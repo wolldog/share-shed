@@ -1,12 +1,13 @@
 const router = require('express').Router();
-const { User, Product, Category } = require('../../models');
+const { Product } = require('../../models');
 
 // CREATE new listing
 router.post('/', async (req, res) => {
   try {
     const dbListingData = await Product.create({
       product_name: req.body.product_name,
-    //   category: req.body.category,
+      owner_id: req.session.id,
+      category_id: 1,
       product_make: req.body.make,
       product_model: req.body.model,
       daily_rate: req.body.rate,
@@ -16,10 +17,13 @@ router.post('/', async (req, res) => {
     });
 
       res.status(200).json(dbListingData);
-    })
+      
+    
 
-    catch (err) {
+    } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
+
+module.exports = router;

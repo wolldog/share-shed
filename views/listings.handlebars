@@ -1,5 +1,5 @@
 <style>
-        /* add some basic styles */
+        
         label {
           display: block;
           margin-bottom: 10px;
@@ -38,74 +38,50 @@
         }
       </style>
 
-<form class="w-100">
-    <div class="row">
-
-        <div class="col-md-6">
-
-                <label>Product Name:</label>
-                <input id="listing-name" type="text" name="product_name" placeholder="e.g. 'Pressure Washer'">
-                
-           
-           
-            
-
-        </div>
-
-         <div class="col-md-6">
-
-                <label>Product Category:</label>
-                <select name="category">
-                  <option id="listing-category" value="">-- Select category --</option>
-                  <option value="floor equipment">Tools</option>
-                  <option value="floor equipment">Floor equipment</option>
-                  <option value="carpet cleaning">Carpet cleaning</option>
-                  <option value="general equipment">General equipment</option>
-                  <option value="garden">Garden</option>
-                  <option value="trailer">Trailer</option>
-                </select>
-                
-                
-            </div>
-
-            <div class="row">
-                            <div class="col-md-6">
-                <label>Product make:</label>
-                <input id="product-make" placeholder="Enter product make" type="number" name="product-make">
-            </div>
-                        <div class="col-md-6">
-                <label>Product model:</label>
-                <input id="product-model" placeholder="Enter model number" type="number" name="product-model">
-            </div>
-
-            </div>
-        
-        <div class="row">
-            
-            <div class="col-md-6">
-                <label>Daily Rate:</label>
-                <input id="daily-rate" placeholder="Enter Price" type="number" name="daily-rate">
-            </div>
-            <div class="col-md-6">
-                
-                
-                <label>Photos section:</label>
-                <input type="file" name="photos" accept="image/*" multiple>
-                
-
-            </div>
-            
-           
-        </div>
-
-         
-     
-        <label>User Manual:</label>
-        <input id="user-manual" type="text" name="user-manual" placeholder="Enter a link to the product user manual if available">
-        
-        <label>Product Description:</label>
-        <textarea id="description" name="description" placeholder="Enter any further information you think would be of interest"></textarea>
-        
+ <div class="listing-card w-100 m-auto col-md-6">
+    <h2 class="page-title text-center">New Listing</h2>
+    <form class="row g-3">
+  <div class="col-md-6">
+    <label for="listing-name" class="form-label">Product Name*</label>
+    <input type="text" class="form-control" id="listing-name" required>
+  </div>
+  <div class="col-md-6">
+    <label for="listing-category" class="form-label">Category*</label>
+    <select id="listing-category" class="form-select" required>
+      <option selected>Choose...</option>
+      <option value="1">Power Tools</option>
+      <option value="2">Gardening</option>
+      <option value="3">Cleaning</option>
+      <option value="4">Trailer</option>
+      <option value="5">General</option>
+    </select>
+  </div>
+  <div class="col-md-6">
+    <label for="product-make" class="form-label">Product Make</label>
+    <input type="text" class="form-control" id="product-make">
+  </div>
+    <div class="col-md-6">
+      
+    <label for="product-model" class="form-label">Product Model</label>
+    <input type="text" class="form-control" id="product-model">
+      
+  </div>
+    <div class="col-md-6">
+      <label for="daily-rate" class="form-label">Daily Rate*</label>
+      <input type="text" class="form-control" id="daily-rate" placeholder="$0.00">
+  </div>
+    <div class="col-md-6">
+      <label for="listing-pic" class="form-label">Select a picture</label>
+      <input class="form-control" type="file" id="listing-pic">
+  </div>
+  <div class="col-12">
+    <label for="user-manual" class="form-label">User Manual</label>
+    <input type="text" class="form-control" id="user-manual" placeholder="Provide a link to the user manual">
+  </div>
+  <div class="col-12">
+    <label for="description" class="form-label">Description</label>
+    <input type="textarea" class="form-control" id="description" placeholder="Enter any further information you think would be of interest">
+  </div>
         <button id="submit-listing" class="btn-yellow" type="submit">Submit</button>
       </form>
  </div>

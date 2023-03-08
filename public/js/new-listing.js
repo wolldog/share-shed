@@ -1,6 +1,6 @@
 const listingFormHandler = async (event) => {
     event.preventDefault();
-  
+
     const product_name = document.querySelector('#listing-name').value.trim();
     const category = document.querySelector('#listing-category').value.trim();
     const make = document.querySelector('#product-make').value.trim();
@@ -18,9 +18,10 @@ const listingFormHandler = async (event) => {
       });
   
       if (response.ok) {
+        alert('New listing successfully created');
         document.location.replace('/');
       } else {
-        alert('Failed to sign up.');
+        alert('Ooops');
       }
     }
   };
