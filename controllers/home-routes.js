@@ -57,5 +57,10 @@ router.get('/howto', (req, res) => {
   res.render('howto');
 });
 
+router.get('/maps', (req, res) => {
+  res.render('maps');
+});
+
+
 
 module.exports = router;
