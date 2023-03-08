@@ -1,81 +1,3 @@
-const router = require("express").Router();
-const { User, Product, Category } = require("../models");
-// Import the custom middleware
-const withAuth = require("../utils/auth");
-
-// GET all products for homepage
-router.get("/", async (req, res) => {
-  try {
-    const dbProductData = await Product.findAll({
-      include: [{ model: Category}],
-    });
-    const products = dbProductData.map((product) =>
-      product.get({ plain: true })
-    );
-    res.render("homepage", {
-      products,
-      loggedIn: req.session.loggedIn,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-
-function getAllLoc(){
-  //get location data and then return it
-
-  var prodData = router.get("/", async (req, res) => {
-    try {
-      const dbProductData = await Product.findAll({
-        attributes: ['daily_rate', 'user_id']
-      });
-      
-      
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
-  });
-  var userloc = router.get("/", async (req, res) => {
-    try {
-      const dbLocdata = await User.findAll({
-        attributes: ['address']
-      });
-      
-      
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
-  });
-
-  for(var i = 0; i<userloc.length;i++){
-    vargeocodedloc = `https://maps.googleapis.com/maps/api/geocode/json?address= ` + `&key=YOUR_API_KEY`
-  }
-  
-
-}
-function getPwLoc(){
-  
-}
-function getGdLoc(){
-  
-}
-function getClLoc(){
-  
-}
-function getTrLoc(){
-  
-}
-function getGeLoc(){
-  
-}
-
-
-
-
 // Initialize and add the map
 function initMap() {
   // The location of Uluru
@@ -90,8 +12,26 @@ function initMap() {
     position: uluru,
     map: map,
   });
+  
 }
 
+
+// Adds a marker to the map.
+function addMarker(geocodedinfo, map, price) {
+  
+
+  //adds marker at location with price
+
+var lat = locationinfo.lat;
+var lng = locationinfo.lng;
+var location = {lat, lng};
+console.log(location);
+new google.maps.Marker({
+  position: location,
+  label: price,
+  map: map,
+});
+}
 
 
 

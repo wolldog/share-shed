@@ -39,6 +39,36 @@ router.get('/product/:id', async (req, res) => {
   }
 });
 
+// GET all product prices
+router.get("/product/:daily_rate", async (req, res) => {
+  try {
+    const dbProductData = await Product.findAll({
+      attributes: ['daily_rate']
+    });
+    return dbProductData;
+    
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// GET owner id from product
+router.get("/product/:owner_id", async (req, res) => {
+  try {
+    const dbProductOwner = await Product.findAll({
+      attributes: ['owner_id']
+    });
+    return dbProductOwner;
+    
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+
+
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
