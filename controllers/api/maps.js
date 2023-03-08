@@ -1,13 +1,10 @@
 const router = require("express").Router();
-const { User, Product, Category } = require("../models");
+const { User, Product, Category } = require("../../models");
 
 router.get("/", async (req, res) => {
-  try {
-    res.render("maps", {});
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
+    console.log(res);
+    res.render("maps");
+    
 });
 
 module.exports = router;

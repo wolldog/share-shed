@@ -53,4 +53,9 @@ router.get('/signup', (req, res) => {
 });
 
 
+router.get('/howto', (req, res) => {
+  res.render('howto');
+});
+
+
 module.exports = router;
