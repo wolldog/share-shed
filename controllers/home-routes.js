@@ -22,6 +22,22 @@ router.get("/", async (req, res) => {
   }
 });
 
+// GET all products
+router.get("/product", async (req, res) => {
+  try {
+    const dbProductData = await Product.findAll({
+      include: [{ model: Category}],
+    });
+    const products = dbProductData.map((product) =>
+      product.get({ plain: true })
+    );
+    return products;
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 
 // GET one product
 // Use the custom middleware before allowing the user to access the product detai

@@ -73,18 +73,22 @@ router.post('/logout', (req, res) => {
   }
 });
 
-// GET all product prices
-router.get("/product/:daily_rate", async (req, res) => {
+//GET all users
+router.get("/user", async (req, res) => {
   try {
-    const dbProductData = await Product.findAll({
-      attributes: ['daily_rate']
+    const dbUserData = await User.findAll({
+      include: [{ model: Category}],
     });
-    return dbProductData;
-    
+    const users = dbUserData.map((user) =>
+      user.get({ plain: true })
+    );
+    return users;
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
+
+
 
 module.exports = router;
