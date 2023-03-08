@@ -1,6 +1,8 @@
 const bookBtn = document.getElementById('book-btn');
 const datePickers = document.querySelectorAll('.js-calculate-total');
 console.log(datePickers)
+const dailyRateString = document.getElementById('daily-rate').innerHTML.split(':').pop();
+const dailyRate = parseFloat(dailyRateString);
 
 // BookBtnHandler function
 
@@ -11,8 +13,8 @@ const bookBtnHandler = async (event) => {
     const startDate = document.getElementById('start_date').value;
     const endDate = document.getElementById('end_date').value;
     const productID = document.location.pathname.split('/').pop();
-    const dailyRateString = document.getElementById('daily-rate').innerHTML.split(':').pop();
-    const dailyRate = parseFloat(dailyRateString);
+    // const dailyRateString = document.getElementById('daily-rate').innerHTML.split(':').pop();
+    // const dailyRate = parseFloat(dailyRateString);
     console.log(startDate, endDate, productID, dailyRate);
     console.log(typeof dailyRate)
     
@@ -41,6 +43,8 @@ const calculateTotal = (event) => {
   const dayCount = date1.diff(startDate, 'day');
   console.log(dayCount)
   console.log(typeof dayCount)
+  const paymentTotal = dayCount * dailyRate;
+  bookBtn.innerHTML = `Book now for $${paymentTotal}`;
 };
 
 // Add event listener to 'Book now' button
