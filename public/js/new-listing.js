@@ -9,11 +9,11 @@ const listingFormHandler = async (event) => {
     const manual = document.querySelector('#user-manual').value.trim();
     const description = document.querySelector('#description').value.trim();
   
-  
+    
     if (product_name && category && make && rate) {
       const response = await fetch('/api/listing', {
         method: 'POST',
-        body: JSON.stringify({ product_name, category, make, model, manual, description }),
+        body: JSON.stringify({ product_name, category, make, model, rate, manual, description }),
         headers: { 'Content-Type': 'application/json' },
       });
   
@@ -27,5 +27,5 @@ const listingFormHandler = async (event) => {
   };
   
   document
-    .querySelector('#submit-listing')
+    .querySelector('.listing-form')
     .addEventListener('submit', listingFormHandler);
