@@ -26,7 +26,7 @@ router.get("/", async (req, res) => {
 // GET one product
 // Use the custom middleware before allowing the user to access the product detai
 // ** TODO - implement middleware**
-router.get('/product/:id', async (req, res) => {
+router.get('/product/:id', withAuth, async (req, res) => {
   try {
     const dbProductData = await Product.findByPk(req.params.id);
 
@@ -50,6 +50,10 @@ router.get('/login', (req, res) => {
 
 router.get('/signup', (req, res) => {
   res.render('signup');
+});
+
+router.get('/listing', (req, res) => {
+  res.render('listings');
 });
 
 module.exports = router;

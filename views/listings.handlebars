@@ -1,0 +1,89 @@
+<style>
+        
+        label {
+          display: block;
+          margin-bottom: 10px;
+        }
+        input, select {
+          display: block;
+          margin-bottom: 20px;
+          width: 100%;
+          padding: 10px;
+          font-size: 16px;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+          box-sizing: border-box;
+        }
+        textarea {
+          display: block;
+          margin-bottom: 20px;
+          width: 100%;
+          height: 200px;
+          padding: 10px;
+          font-size: 16px;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+          box-sizing: border-box;
+        }
+        button {
+          background-color: #4CAF50;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+        button:hover {
+          background-color: #3e8e41;
+        }
+      </style>
+
+ <div class="listing-card w-100 m-auto col-md-6">
+    <h2 class="page-title text-center">New Listing</h2>
+    <form class="row g-3 listing-form">
+  <div class="col-md-6">
+    <label for="listing-name" class="form-label">Product Name*</label>
+    <input type="text" class="form-control" id="listing-name" required>
+  </div>
+  <div class="col-md-6">
+    <label for="listing-category" class="form-label">Category*</label>
+    <select id="listing-category" class="form-select" required>
+      <option selected>Choose...</option>
+      <option value="1">Power Tools</option>
+      <option value="2">Gardening</option>
+      <option value="3">Cleaning</option>
+      <option value="4">Trailer</option>
+      <option value="5">General</option>
+    </select>
+  </div>
+  <div class="col-md-6">
+    <label for="product-make" class="form-label">Product Make</label>
+    <input type="text" class="form-control" id="product-make">
+  </div>
+    <div class="col-md-6">
+      
+    <label for="product-model" class="form-label">Product Model</label>
+    <input type="text" class="form-control" id="product-model">
+      
+  </div>
+    <div class="col-md-6">
+      <label for="daily-rate" class="form-label">Daily Rate*</label>
+      <input type="text" class="form-control" id="daily-rate" placeholder="$0.00">
+  </div>
+    <div class="col-md-6">
+      <label for="listing-pic" class="form-label">Select a picture</label>
+      <input class="form-control" type="file" id="listing-pic">
+  </div>
+  <div class="col-12">
+    <label for="user-manual" class="form-label">User Manual</label>
+    <input type="text" class="form-control" id="user-manual" placeholder="Provide a link to the user manual">
+  </div>
+  <div class="col-12">
+    <label for="description" class="form-label">Description</label>
+    <input type="textarea" class="form-control" id="description" placeholder="Enter any further information you think would be of interest">
+  </div>
+        <button id="submit-listing" class="btn-yellow" type="submit">Submit</button>
+      </form>
+ </div>
+
+ <script src="/js/new-listing.js"></script>
