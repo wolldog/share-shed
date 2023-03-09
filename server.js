@@ -7,6 +7,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const helpers = require('./utils/helpers');
+const helpers = require('./utils/helpers');
 
 
 const app = express();
@@ -17,9 +18,9 @@ const sess = {
   cookie: {
         // maxAge sets the maximum age for the cookie to be valid. 
         maxAge: 4 * 60 * 60 * 1000,
-        httpOnly: true,
-        secure: false,
-        sameSite: 'strict',
+        // httpOnly: true,
+        // secure: false,
+        // sameSite: 'strict',
   },
   resave: false,
   saveUninitialized: true,
@@ -30,7 +31,7 @@ const sess = {
 
 app.use(session(sess));
 
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({ helpers }{ helpers });
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
