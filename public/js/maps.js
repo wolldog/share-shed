@@ -1,6 +1,7 @@
 let dailyrates;
 let ownerID;
 let userdata;
+let markerData
 
 const getMapData = async () => {
   
@@ -12,28 +13,8 @@ const getMapData = async () => {
   });
 
   console.log("goodbye")
-  
-  if (response.ok) {
-    alert('Booking successfully created!');
-  } else {
-    alert(response.statusText);
-  }
-  console.log(response);
+
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // Initialize and add the map
@@ -46,9 +27,7 @@ function initMap() {
     center: uluru,
   });
 
-  getMarkerInfo();
-
-  
+ 
 
   
   for(var i = 0; i<ownerID;i++){
