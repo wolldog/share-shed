@@ -17,8 +17,8 @@ const sess = {
   cookie: {
         // maxAge sets the maximum age for the cookie to be valid. 
         maxAge: 4 * 60 * 60 * 1000,
-        httpOnly: true,
-        secure: false,
+        // httpOnly: true,
+        // secure: false,
         sameSite: 'strict',
   },
   resave: false,
