@@ -21,25 +21,40 @@ const bookBtnHandler = async (event) => {
     const paymentTotalDec = parseFloat(paymentTotal.toFixed(2)) + 0.01;
     console.log(paymentTotalDec)
     console.log(typeof paymentTotalDec)
-    // const dailyRateString = document.getElementById('daily-rate').innerHTML.split(':').pop();
-    // const dailyRate = parseFloat(dailyRateString);
-    // console.log(startDate, endDate, productID, dailyRate);
-    // console.log(typeof dailyRate)
     
-    const response = await fetch(`/api/booking/`, {
+    const postBooking = await fetch(`/api/booking/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify({ startDate, endDate, paymentTotalDec, productID }),
     });
     
-    if (response.ok) {
-        // alert('Booking successfully created!');
-        document.location.replace('/');
-      } else {
-        alert(response.statusText);
-      }
-    console.log(response);
+    console.log(postBooking);
+
+    const getBooking = await fetch('/api/booking', {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (postBooking.ok && getBooking.ok) {
+      document.location.replace('/');
+    } else {
+      alert(getBooking.statusText);
+    }
 };
+
+// Booking confirmation fetch
+
+// async function bookingConfirm() {
+//   const response = await fetch('/api/booking', {
+//     method: 'GET',
+//     headers: { 'Content-Type': 'application/json' },
+//   });
+//   if (response.ok) {
+//     document.location.replace('/');
+//   } else {
+//     alert(response.statusText);
+//   }
+// }; 
 
 // CalculateTotal function
 

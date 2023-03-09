@@ -36,13 +36,13 @@ router.get('/', async (req, res) => {
         //     id: ,
         // }
         order: [['id', 'DESC']],
-    });
-
-    const singleBooking = dbSingleBooking.get({ plain: true });
+    })
+    // res.json(dbSingleBooking);
+    // const singleBooking = dbSingleBooking.get({ plain: true });
 
     // res.status(200).json(singleBooking);
     // res.redirect('/');
-    res.render("booking-conf", { singleBooking });
+    res.render("booking-conf", { dbSingleBooking });
     
 
     } catch (err) {
