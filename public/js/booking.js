@@ -33,7 +33,8 @@ const bookBtnHandler = async (event) => {
     });
     
     if (response.ok) {
-        alert('Booking successfully created!');
+        // alert('Booking successfully created!');
+        document.location.replace('/');
       } else {
         alert(response.statusText);
       }

@@ -11,7 +11,18 @@
   <div class="col-md-6 align-items-center">
     <div class="login-card w-100 m-auto">
       <h2 class="page-title">Booking Confirmation</h2>
-      <form class="form signup-form">
+      
+      <div class="container-fluid" id="booking-conf">
+        <h5>Booking successful!</h5>
+        <h6>Product: {{product_name}}</h6>
+        <h6>Make: {{product_make}}</h6>
+        <h6>Model: {{product_model}}</h6>
+        <h6>Start Date: {{start_date}}</h6>
+        <h6>End Date: {{end_date}}</h6>
+        <h6>Total Price: ${{payment_total}}</h6>
+      </div>
+
+      {{!-- <form class="form signup-form">
         <div class="form-group mb-3">
           <label for="first-name-signup" class="form-label">First Name:</label>
           <input class="form-input" type="text" id="first-name-signup" />
@@ -36,7 +47,8 @@
         <div class="form-group mb-3">
           <button class="btn btn-yellow w-100 mb-3" type="submit">Create Account</button>
         </div>
-      </form>
+      </form> --}}
+    
     </div>
   </div>
 </div>

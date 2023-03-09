@@ -29,15 +29,21 @@ router.post('/', async (req, res) => {
 
 router.get('/', async (req, res) => {
     try {
-      let singleBooking = await Booking.findAll({
+      let dbSingleBooking = await Booking.findAll({
         limit: 1,
+        // add include: [Product] to get product info
         // where: {
         //     id: ,
         // }
         order: [['id', 'DESC']],
     });
-    res.status(200).json(singleBooking);
-    // res.render("booking-conf", { singleBooking });
+
+    const singleBooking = dbSingleBooking.get({ plain: true });
+
+    // res.status(200).json(singleBooking);
+    // res.redirect('/');
+    res.render("booking-conf", { singleBooking });
+    
 
     } catch (err) {
       console.log(err);
