@@ -52,7 +52,9 @@ const calculateTotal = async (event) => {
   console.log(dayCount)
   console.log(typeof dayCount)
   const paymentTotal = await dayCount * dailyRate;
-  bookBtn.innerHTML = `Book now for $${paymentTotal}`;
+  if (paymentTotal !== NaN) {
+    bookBtn.innerHTML = `Book now for $${paymentTotal}`;
+  }
   return paymentTotal;
 };
 
