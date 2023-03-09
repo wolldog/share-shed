@@ -34,7 +34,7 @@ const bookBtnHandler = async (event) => {
     });
 
     if (postBooking.ok && getBooking.ok) {
-      document.location.replace('/api/booking/booking-conf');
+      document.location.replace('/booking-conf');
     } else {
       alert(getBooking.statusText);
     }

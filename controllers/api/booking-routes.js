@@ -44,7 +44,7 @@ router.get('/', async (req, res) => {
 
     // res.status(200).json(singleBooking);
     // res.redirect('/');
-    res.render("booking-conf", { dbSingleBooking });
+    res.render('booking-conf', { dbSingleBooking });
     
 
     } catch (err) {
