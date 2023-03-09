@@ -55,6 +55,7 @@ router.get('/product/:id', async (req, res) => {
   }
 });
 
+// <<FOR MAPS>>
 // GET all product prices
 router.get("/product/:daily_rate", async (req, res) => {
   try {
@@ -69,6 +70,7 @@ router.get("/product/:daily_rate", async (req, res) => {
   }
 });
 
+// <<FOR MAPS>>
 // GET owner id from product
 router.get("/product/:owner_id", async (req, res) => {
   try {
