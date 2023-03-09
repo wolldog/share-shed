@@ -2,24 +2,38 @@ let dailyrates;
 let ownerID;
 let userdata;
 
-const getMarkerInfo = async () => {
+const getMapData = async () => {
+  
   console.log("hello")
-  dailyrates = await fetch('/product/:daily_rate', {
+
+  markerData = await fetch('/api/maps', {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
   });
 
-  ownerID = await fetch('/product/:owner_id',{
-    method: 'GET',
-    headers: { 'Content-Type': 'application/json' },
-  });
-  userdata = await fetch('/api/users/user',{
-    method: 'GET',
-    headers: { 'Content-Type': 'application/json' },
-  })
+  console.log("goodbye")
   
-  return [dailyrates, ownerID, userdata]
+  if (response.ok) {
+    alert('Booking successfully created!');
+  } else {
+    alert(response.statusText);
+  }
+  console.log(response);
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Initialize and add the map
@@ -65,7 +79,9 @@ new google.maps.Marker({
 }
 
 
-
+document
+.querySelector('#mapButton')
+  .addEventListener('click', getMapData);
 
 
 
