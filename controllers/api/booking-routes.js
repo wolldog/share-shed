@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Booking } = require('../../models');
 const { User } = require('../../models');
+const { Product } = require('../../models');
 
 // Create new booking 
 
@@ -36,6 +37,7 @@ router.get('/', async (req, res) => {
         //     id: ,
         // }
         order: [['id', 'DESC']],
+        include: [Product],
     })
     // res.json(dbSingleBooking);
     // const singleBooking = dbSingleBooking.get({ plain: true });

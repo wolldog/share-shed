@@ -27,8 +27,6 @@ const bookBtnHandler = async (event) => {
         headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify({ startDate, endDate, paymentTotalDec, productID }),
     });
-    
-    console.log(postBooking);
 
     const getBooking = await fetch('/api/booking', {
       method: 'GET',
@@ -36,7 +34,7 @@ const bookBtnHandler = async (event) => {
     });
 
     if (postBooking.ok && getBooking.ok) {
-      document.location.replace('/');
+      document.location.replace('/api/booking/booking-conf');
     } else {
       alert(getBooking.statusText);
     }
