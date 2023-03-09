@@ -220,6 +220,7 @@ img {
   grid-row-gap: 30px;
   background-color: #eee;
 }
+
 .item{
 background-color: #fff;
 
@@ -289,6 +290,39 @@ font-weight: bold;
 .item:hover p {
   display: block;
 }
+
+
+.mapdiv{
+  height: 100%;
+  width: 100%;
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#FFD966;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.float-map{
+	margin-top:22px;
+}
+.float-list{
+	margin-top:22px;
+
+}
+
+#map {
+  height: 100%; 
+  width: 100%;
+}
+
 @media screen and (max-width: 1000px){
   .items{
       grid-template-columns: repeat(2, 1fr);

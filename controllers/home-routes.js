@@ -22,6 +22,22 @@ router.get("/", async (req, res) => {
   }
 });
 
+// GET all products
+router.get("/product", async (req, res) => {
+  try {
+    const dbProductData = await Product.findAll({
+      include: [{ model: Category}],
+    });
+    const products = dbProductData.map((product) =>
+      product.get({ plain: true })
+    );
+    return products;
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 
 // GET one product
 // Use the custom middleware before allowing the user to access the product detai
@@ -39,6 +55,38 @@ router.get('/product/:id', withAuth, async (req, res) => {
   }
 });
 
+// <<FOR MAPS>>
+// GET all product prices
+router.get("/product/:daily_rate", async (req, res) => {
+  try {
+    const dbProductData = await Product.findAll({
+      attributes: ['daily_rate']
+    });
+    return dbProductData;
+    
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// <<FOR MAPS>>
+// GET owner id from product
+router.get("/product/:owner_id", async (req, res) => {
+  try {
+    const dbProductOwner = await Product.findAll({
+      attributes: ['owner_id']
+    });
+    return dbProductOwner;
+    
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+
+
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
@@ -51,6 +99,17 @@ router.get('/login', (req, res) => {
 router.get('/signup', (req, res) => {
   res.render('signup');
 });
+
+
+router.get('/howto', (req, res) => {
+  res.render('howto');
+});
+
+router.get('/maps', (req, res) => {
+  res.render('maps');
+});
+
+
 
 router.get('/listing', (req, res) => {
   res.render('listings');

@@ -73,4 +73,36 @@ router.post('/logout', (req, res) => {
   }
 });
 
+
+// <<FOR MAPS>>
+//GET all users
+router.get("/user", async (req, res) => {
+  try {
+    const dbUserData = await User.findAll({
+      include: [{ model: Category}],
+    });
+    const users = dbUserData.map((user) =>
+      user.get({ plain: true })
+    );
+    return users;
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+router.get("/user", async (req, res) => {
+  try {
+    const dbUserID = await User.findAll({
+      attributes: ['id', 'latlong'],
+    });
+    return dbUserID;
+    
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+
+
 module.exports = router;
