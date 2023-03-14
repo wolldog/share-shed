@@ -43,10 +43,9 @@ router.post("/login", async (req, res) => {
       return;
     }
 
-    console.log(dbUserData)
-
     req.session.save(() => {
       req.session.loggedIn = true;
+      //Save currently logged in user to cookies
       req.session.currentUser = dbUserData.id;
 
       res

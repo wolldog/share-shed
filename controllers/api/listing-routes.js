@@ -2,13 +2,13 @@ const router = require('express').Router();
 const { Product, User } = require('../../models');
 
 // CREATE new listing
-// ** Owner ID currently hardcoded
 router.post('/', async (req, res) => {
   
   try {
     const dbListingData = await Product.create({
       product_name: req.body.product_name,
-      owner_id: 1,
+      //retrieve currently logged in user from cookies
+      owner_id: req.session.currentUser,
       category_id: req.body.category,
       product_make: req.body.make,
       product_model: req.body.model,
