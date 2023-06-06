@@ -1,5 +1,5 @@
-# share-shed
-Share Shed is a website for people who wants to rent out the tools that they are not using and have been stored for a long time in their sheds. Share Shed enables people to share their tools by renting them out to others. The website uses HTML, CSS, and JavaScript for its development and incorporates Bootstrap and Font awesome for styling. For The back-end side we are using Node.js, Express.js, MySQL and RESTful API.
+# Share Shed
+Share Shed is a website that enables people to make their tools available to hire. So many of us have purchased tools to complete a DIY project and then these tools sit in the shed for months on end without being used. Share Shed allows users to advertise their tools for hire or make use of other users tools for a small daily fee.  
 
 ## User Story
 
